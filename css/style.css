@@ -1,0 +1,307 @@
+/* Beauty Kuckó Dunakeszi – stíluslap */
+
+@font-face { font-family: "Marcellus"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../fonts/marcellus-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Marcellus"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../fonts/marcellus-latin-ext-400-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Figtree"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../fonts/figtree-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Figtree"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../fonts/figtree-latin-ext-400-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Figtree"; font-style: normal; font-weight: 600; font-display: swap;
+  src: url("../fonts/figtree-latin-600-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Figtree"; font-style: normal; font-weight: 600; font-display: swap;
+  src: url("../fonts/figtree-latin-ext-600-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+
+:root {
+  --linen: #FAF7F5;
+  --blush: #F2E4DF;
+  --line: #E4D5CE;
+  --ink: #3B2A30;
+  --ink-soft: #6A5359;
+  --gold: #B08A3C;
+  --gold-text: #7F5E1E;
+  --white: #FFFFFF;
+
+  --serif: "Marcellus", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: 1.6rem;
+  --step-3: clamp(1.9rem, 1.4rem + 2vw, 2.6rem);
+  --step-4: clamp(2.4rem, 1.6rem + 3.6vw, 3.9rem);
+
+  --wrap: 72rem;
+  --gutter: clamp(1.15rem, 4vw, 2.5rem);
+  --arch: 999px 999px 0.4rem 0.4rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 5.5rem; }
+body {
+  margin: 0;
+  background: var(--linen);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--gold-text); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { color: var(--ink); }
+:focus-visible { outline: 2px solid var(--gold-text); outline-offset: 3px; border-radius: 2px; }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.15; margin: 0 0 0.6em; letter-spacing: 0.005em; }
+h1 { font-size: var(--step-4); }
+h2 { font-size: var(--step-3); }
+h3 { font-size: var(--step-2); }
+p { margin: 0 0 1em; max-width: 66ch; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: var(--gutter); }
+.skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: var(--white); padding: 0.6rem 1rem; z-index: 100; }
+.skip:focus { left: 0.5rem; top: 0.5rem; }
+.muted { color: var(--ink-soft); }
+.lead { font-size: var(--step-1); color: var(--ink-soft); }
+
+/* Gombok */
+.btn {
+  display: inline-block;
+  font: 600 1rem/1 var(--sans);
+  padding: 0.95rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--white);
+  transition: background-color .2s, color .2s;
+}
+.btn:hover { background: var(--gold-text); border-color: var(--gold-text); color: var(--white); }
+.btn--ghost { background: transparent; color: var(--ink); }
+.btn--ghost:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
+.btn--small { padding: 0.7rem 1.1rem; font-size: 0.95rem; }
+
+/* Fejléc */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250, 247, 245, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .wrap { display: flex; align-items: center; gap: 1.5rem; min-height: 4.5rem; }
+.brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; color: var(--ink); margin-right: auto; }
+.brand img { width: 3.9rem; }
+.brand span { white-space: nowrap; font-family: var(--serif); font-size: 1.15rem; line-height: 1.1; }
+.brand small { display: block; font-family: var(--sans); font-size: 0.8rem; color: var(--ink-soft); letter-spacing: 0.04em; }
+.nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.6rem; align-items: center; }
+.nav a { white-space: nowrap; color: var(--ink); text-decoration: none; font-size: 0.98rem; padding: 0.3rem 0; border-bottom: 1px solid transparent; }
+.nav a:hover, .nav a[aria-current="page"] { border-bottom-color: var(--gold); }
+.nav .btn { color: var(--white); border-bottom: 1px solid var(--ink); padding: 0.75rem 1.2rem; }
+.nav .btn:hover { border-color: var(--gold-text); }
+.nav-toggle { display: none; }
+
+@media (max-width: 1040px) {
+  .nav-toggle {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font: 600 0.95rem var(--sans); color: var(--ink);
+    background: none; border: 1px solid var(--line); border-radius: 999px; padding: 0.55rem 1rem; cursor: pointer;
+  }
+  .nav-toggle svg { width: 1.1rem; height: 1.1rem; }
+  .nav { position: fixed; inset: 4.5rem 0 auto 0; background: var(--linen); border-bottom: 1px solid var(--line); display: none; }
+  .nav.is-open { display: block; }
+  .nav ul { flex-direction: column; align-items: stretch; gap: 0; padding: 0.5rem var(--gutter) 1.5rem; }
+  .nav li a { display: block; padding: 0.95rem 0; border-bottom: 1px solid var(--line); font-size: 1.1rem; }
+  .nav li:last-child { margin-top: 1rem; }
+  .nav li:last-child a { text-align: center; border-bottom: 0; }
+}
+
+/* Hős szakasz */
+.hero { padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(3rem, 7vw, 6rem); }
+.hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.hero h1 { margin-bottom: 0.4em; }
+.hero .lead { max-width: 34ch; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
+.hero-figure { position: relative; margin: 0; }
+.hero-figure img { border-radius: var(--arch); aspect-ratio: 4 / 5; object-fit: cover; width: 100%; }
+.hero-figure::before {
+  content: ""; position: absolute; inset: -0.9rem 0.9rem 0.9rem -0.9rem;
+  border: 1px solid var(--gold); border-radius: var(--arch); z-index: -1;
+}
+.address-line { margin-top: 1.6rem; font-size: 0.98rem; color: var(--ink-soft); }
+@media (max-width: 760px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .hero-figure { max-width: 22rem; margin-left: 0.9rem; }
+}
+
+/* Szakaszok */
+.section { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
+.section--blush { background: var(--blush); }
+.section-head { max-width: 40rem; margin-bottom: clamp(2rem, 4vw, 3rem); }
+.section-head p { color: var(--ink-soft); }
+
+/* Szakember-boltívek */
+.people { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 2rem); list-style: none; padding: 0; margin: 0; }
+.person { display: flex; flex-direction: column; }
+.person img { border-radius: var(--arch); aspect-ratio: 3 / 4; object-fit: cover; width: 100%; background: var(--blush); }
+.person h3 { font-size: var(--step-1); margin: 1rem 0 0.2rem; }
+.person .role { color: var(--ink-soft); font-size: 0.98rem; margin: 0 0 0.8rem; flex-grow: 1; }
+.person .btn { align-self: flex-start; }
+.person .via { font-size: 0.88rem; color: var(--ink-soft); margin: 0 0 0.7rem; }
+@media (max-width: 900px) { .people { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2.5rem; } }
+@media (max-width: 420px) { .person .btn { width: 100%; text-align: center; } }
+
+/* Szalon */
+.salon { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.salon-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.salon-photos img { aspect-ratio: 2 / 3; object-fit: cover; border-radius: 0.4rem; width: 100%; }
+.salon-photos img:last-child { margin-top: 3rem; }
+@media (max-width: 760px) { .salon { grid-template-columns: 1fr; } }
+
+/* Szolgáltatás-áttekintő */
+.areas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
+.area { text-decoration: none; color: var(--ink); }
+.area img { aspect-ratio: 1; object-fit: cover; border-radius: 0.4rem; width: 100%; }
+.area h3 { font-size: var(--step-1); margin: 0.9rem 0 0.3rem; }
+.area p { font-size: 0.97rem; color: var(--ink-soft); margin: 0; }
+.area:hover h3 { text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 0.2em; }
+@media (max-width: 900px) { .areas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Vélemények */
+.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 3rem); margin: 0; padding: 0; list-style: none; }
+.quotes blockquote { margin: 0; font-family: var(--serif); font-size: 1.3rem; line-height: 1.45; }
+.quotes figcaption { margin-top: 1rem; font-size: 0.95rem; color: var(--ink-soft); }
+.quotes figure { margin: 0; padding-top: 1.2rem; border-top: 1px solid var(--gold); }
+@media (max-width: 760px) { .quotes { grid-template-columns: 1fr; } }
+
+/* Kapcsolat */
+.visit { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem, 5vw, 4rem); }
+.visit dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.7rem 1.5rem; }
+.visit dt { color: var(--ink-soft); }
+.visit dd { margin: 0; }
+.social { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.5rem; }
+@media (max-width: 760px) { .visit { grid-template-columns: 1fr; } .visit dl { grid-template-columns: 1fr; gap: 0.15rem; } .visit dd { margin-bottom: 0.8rem; } }
+
+/* Oldalfejléc aloldalakon */
+.page-head { padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(1.5rem, 3vw, 2.5rem); }
+.page-head p { color: var(--ink-soft); font-size: var(--step-1); max-width: 46ch; }
+
+/* Szolgáltatások */
+.subnav { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0 0 1rem; padding: 0; list-style: none; }
+.subnav a { display: inline-block; padding: 0.55rem 1rem; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; color: var(--ink); background: var(--white); font-size: 0.95rem; }
+.subnav a:hover { border-color: var(--gold); }
+.service-block { display: grid; grid-template-columns: 17rem 1fr; gap: clamp(2rem, 5vw, 4rem); padding: clamp(2.5rem, 6vw, 4rem) 0; border-top: 1px solid var(--line); }
+.service-block aside img { border-radius: var(--arch); aspect-ratio: 3 / 4; object-fit: cover; width: 100%; }
+.service-block aside p { margin: 0.9rem 0 1rem; color: var(--ink-soft); font-size: 0.97rem; }
+.service-block h2 { margin-bottom: 0.3em; }
+.service-group { margin-top: 2rem; }
+.service-group h3 { font-size: var(--step-1); margin-bottom: 0.4rem; }
+.service-list { list-style: none; margin: 0; padding: 0; }
+.service-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.65rem 0; border-bottom: 1px dotted var(--line); }
+.service-list .meta { color: var(--ink-soft); white-space: nowrap; font-size: 0.95rem; }
+.service-note { font-size: 0.97rem; color: var(--ink-soft); margin-top: 0.8rem; }
+@media (max-width: 760px) {
+  .service-block { grid-template-columns: 1fr; }
+  .service-block aside { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; align-items: center; }
+  .service-block aside p { margin: 0 0 0.6rem; }
+  .service-list li { flex-direction: column; gap: 0.1rem; }
+}
+
+/* Csapat */
+.bio { display: grid; grid-template-columns: 20rem 1fr; gap: clamp(2rem, 5vw, 4.5rem); padding: clamp(2.5rem, 6vw, 4.5rem) 0; border-top: 1px solid var(--line); }
+.bio > figure { margin: 0; }
+.bio > figure img { border-radius: var(--arch); aspect-ratio: 3 / 4; object-fit: cover; width: 100%; }
+.bio .role { color: var(--ink-soft); font-size: var(--step-1); margin-top: -0.3em; }
+.bio ul.ticks { padding-left: 1.1rem; max-width: 64ch; }
+.bio ul.ticks li { margin-bottom: 0.45rem; }
+.bio ul.ticks li::marker { color: var(--gold); }
+.strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin-top: 1.8rem; }
+.strip img { aspect-ratio: 1; object-fit: cover; border-radius: 0.3rem; width: 100%; }
+@media (max-width: 760px) { .bio { grid-template-columns: 1fr; } .bio > figure { max-width: 17rem; } }
+
+/* Foglalás */
+.booking { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+.booking > li { display: grid; grid-template-columns: 8rem 1fr; gap: 1.4rem; background: var(--white); border: 1px solid var(--line); border-radius: 0.6rem; padding: 1.4rem; }
+.booking img { border-radius: var(--arch); aspect-ratio: 3 / 4; object-fit: cover; width: 100%; }
+.booking h2 { font-size: var(--step-2); margin-bottom: 0.15em; }
+.booking .role { color: var(--ink-soft); margin-bottom: 0.9rem; }
+.booking .how { font-size: 0.97rem; }
+.booking .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+.notice { border-left: 2px solid var(--gold); padding: 0.2rem 0 0.2rem 1rem; font-size: 0.97rem; margin: 0.9rem 0 0; }
+@media (max-width: 900px) { .booking { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .booking > li { grid-template-columns: 1fr; } .booking img { max-width: 9rem; } }
+
+/* Galéria */
+.filters { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
+.filters button { font: 400 0.95rem var(--sans); padding: 0.55rem 1.1rem; border-radius: 999px; border: 1px solid var(--line); background: var(--white); color: var(--ink); cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--white); border-color: var(--ink); }
+.gallery { columns: 3 16rem; column-gap: 1rem; }
+.gallery a { display: block; margin-bottom: 1rem; break-inside: avoid; border-radius: 0.4rem; overflow: hidden; }
+.gallery a[hidden] { display: none; }
+.gallery img { width: 100%; transition: transform .4s; }
+.gallery a:hover img { transform: scale(1.03); }
+.lightbox { border: 0; padding: 0; background: transparent; max-width: 94vw; max-height: 92vh; }
+.lightbox::backdrop { background: rgba(40, 28, 32, 0.9); }
+.lightbox img { max-height: 86vh; max-width: 94vw; width: auto; border-radius: 0.3rem; }
+.lightbox-bar { display: flex; justify-content: space-between; gap: 0.5rem; margin-top: 0.6rem; }
+.lightbox button { font: 600 0.95rem var(--sans); background: var(--linen); color: var(--ink); border: 0; border-radius: 999px; padding: 0.6rem 1.1rem; cursor: pointer; }
+
+/* Szöveges oldalak */
+.prose { max-width: 46rem; padding-bottom: clamp(3rem, 7vw, 5rem); }
+.prose h2 { font-size: var(--step-2); margin-top: 2.2rem; }
+.prose ul { padding-left: 1.2rem; }
+.prose li { margin-bottom: 0.35rem; }
+.prose li::marker { color: var(--gold); }
+.prose .callout { background: var(--blush); padding: 1.1rem 1.3rem; border-radius: 0.5rem; }
+.prose dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem 1.4rem; }
+.prose dt { color: var(--ink-soft); }
+.prose dd { margin: 0; }
+@media (max-width: 560px) { .prose dl { grid-template-columns: 1fr; gap: 0; } .prose dd { margin-bottom: 0.7rem; } }
+
+/* Lábléc */
+.cta-band { background: var(--ink); color: var(--linen); padding: clamp(3rem, 7vw, 5rem) 0; }
+.cta-band .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.cta-band h2 { margin: 0; }
+.cta-band p { margin: 0.4rem 0 0; color: #D9C9C3; }
+.cta-band .btn { background: var(--linen); color: var(--ink); border-color: var(--linen); }
+.cta-band .btn:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+.site-footer { background: var(--ink); color: #D9C9C3; padding: 0 0 2.5rem; font-size: 0.95rem; }
+.site-footer .wrap { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 2.5rem; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; }
+.site-footer a { color: #F1E6E1; }
+.site-footer a:hover { color: var(--gold); }
+.site-footer ul { list-style: none; margin: 0; padding: 0; }
+.site-footer li { margin-bottom: 0.45rem; }
+.site-footer h2 { font-family: var(--sans); font-size: 0.95rem; font-weight: 600; color: #F1E6E1; margin-bottom: 0.8rem; }
+.site-footer .fine { grid-column: 1 / -1; font-size: 0.85rem; color: #B9A7A1; margin: 1rem 0 0; max-width: none; }
+.footer-logo { width: 5rem; margin-bottom: 0.8rem; }
+@media (max-width: 760px) { .site-footer .wrap { grid-template-columns: 1fr; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* Árak */
+.service-list .sname { display: flex; flex-direction: column; }
+.service-list .sname small { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.45; margin-top: 0.15rem; max-width: 46ch; }
+.service-list .meta { display: flex; gap: 1.2rem; align-items: baseline; justify-content: flex-end; text-align: right; }
+.service-list .dur { color: var(--ink-soft); font-size: 0.92rem; }
+.service-list .price { color: var(--ink); font-weight: 600; min-width: 6.5rem; }
+.table-wrap { overflow-x: auto; }
+.price-table { border-collapse: collapse; width: 100%; max-width: 30rem; font-variant-numeric: tabular-nums; }
+.price-table th, .price-table td { padding: 0.55rem 0.8rem 0.55rem 0; border-bottom: 1px dotted var(--line); text-align: left; }
+.price-table thead th { font-weight: 600; font-size: 0.92rem; color: var(--ink-soft); border-bottom: 1px solid var(--line); }
+.price-table tbody th { font-weight: 400; }
+.price-table td { font-weight: 600; }
+.valid { font-size: 0.88rem; color: var(--ink-soft); margin-top: 0.6rem; }
+@media (max-width: 760px) {
+  .service-list li { flex-direction: row; flex-wrap: wrap; }
+  .service-list .sname { flex: 1 1 60%; }
+  .service-list .meta { flex-direction: column; gap: 0; align-items: flex-end; }
+  .service-list .price { min-width: 0; }
+}
